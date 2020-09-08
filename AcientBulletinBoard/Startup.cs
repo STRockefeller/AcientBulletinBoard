@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using AcientBulletinBoard.Middlewares;
+using AcientBulletinBoard.DataModels;
+using LinqToDB.AspNet;
+using LinqToDB.AspNet.Logging;
 
 namespace AcientBulletinBoard
 {
@@ -23,6 +28,14 @@ namespace AcientBulletinBoard
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddSingleton<AuthenticationMiddleware>();
+            services.AddLinqToDbContext<AppDataConnection>((provider, options) =>
+            {
+                options
+                .UseSQLite(Configuration.GetConnectionString("Default"))
+                .UseDefaultLogging(provider);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +54,7 @@ namespace AcientBulletinBoard
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthenticationMiddleware();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model PublicBulletinBoardModel
+
+<hr size=1>
+<center>
+    <div class="card text-left">
+        <img class="card-img-top" src="holder.js/100px180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Public Bulletin Board</h4>
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text"
+                       class="form-control" name="" id="inpName" aria-describedby="helpId" placeholder="" value="@Model.user.name">
+            </div>
+            <p class="card-text">
+                <div class="form-group">
+                    <label for="">Comment</label>
+                    <input type="text"
+                           class="form-control" name="" id="inpComment" aria-describedby="helpId" placeholder="">
+                </div>
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" onclick="history.back()">Back</button>
+            </p>
+        </div>
+    </div>
+</center>
+
+@section Scripts{
+    @*<script src="~/js/PublicBulletinBoardIndex.js"></script>*@
+<script>
+        $(document).ready(function () {
+
+            $("#btnSubmit").click(function () {
+            @Model.comment = $("#inpComment").val();
+            @{
+                Model.submit();
+            }
+        })
+    })
+</script>
+
+}

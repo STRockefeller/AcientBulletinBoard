@@ -2,7 +2,28 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="logIn">
+    <div class="card text-left">
+        <img class="card-img-top" src="holder.js/100px180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">LogIn</h4>
+            <div class="form-group">
+                <label for=""></label>
+                <div class="form-group">
+                    <label for="">Accpunt</label>
+                    <input type="text" name="" id="InpAccount" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="" id="InpPassword" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <a name="" id="btnLogin" class="btn btn-primary" href="#" role="button">LogIn</a>
+                <a name="" id="btnGuestLogin" class="btn btn-primary" href="#" role="button">Browse as a Guest</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+<script src="~/js/HomeIndex.js"></script>
+}
