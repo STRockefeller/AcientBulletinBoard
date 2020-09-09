@@ -12,6 +12,7 @@ using AcientBulletinBoard.Middlewares;
 using AcientBulletinBoard.DataModels;
 using LinqToDB.AspNet;
 using LinqToDB.AspNet.Logging;
+using AcientBulletinBoard.Hubs;
 
 namespace AcientBulletinBoard
 {
@@ -29,7 +30,9 @@ namespace AcientBulletinBoard
         {
             services.AddControllersWithViews();
             services.AddMvc();
+            services.AddSignalR();
             services.AddSingleton<AuthenticationMiddleware>();
+            services.AddSingleton<CommentSubmitMiddleware>();
             services.AddLinqToDbContext<AppDataConnection>((provider, options) =>
             {
                 options
@@ -55,12 +58,14 @@ namespace AcientBulletinBoard
 
             app.UseAuthorization();
             app.UseAuthenticationMiddleware();
+            app.UseCommentSubmitMiddleware();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub < ChatRoomHub > ("/ChatRoomHub");
             });
         }
     }

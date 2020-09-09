@@ -7,40 +7,62 @@
 
 <hr size=1>
 <center>
+    <div class="Board">
+        <ul class="list-group">
+            @foreach (var comment in @Model.comments)
+            {
+                string color;
+                switch(comment.camp)
+                {
+                    case "Shu":
+                        color = "green";
+                        break;
+                    case "Wu":
+                        color = "red";
+                        break;
+                    case "Wei":
+                        color = "blue";
+                        break;
+                    case "Neutral":
+                        color = "gray";
+                        break;
+                    case "God":
+                        color = "gold";
+                        break;
+                    default:
+                        color = "black";
+                        break;
+                }
+                <li class="list - group - item" style="color:@color">@comment.name : @comment.comment  @comment.dateTime</li>
+            }
+        </ul>
+    </div>
     <div class="card text-left">
         <img class="card-img-top" src="holder.js/100px180/" alt="">
         <div class="card-body">
             <h4 class="card-title">Public Bulletin Board</h4>
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text"
-                       class="form-control" name="" id="inpName" aria-describedby="helpId" placeholder="" value="@Model.user.name">
+                <input asp-for="user.name" type="text"
+                       class="form-control" name="" id="inpName" aria-describedby="helpId" placeholder="" >
             </div>
             <p class="card-text">
                 <div class="form-group">
                     <label for="">Comment</label>
-                    <input type="text"
+                    <input asp-for="comment" type="text"
                            class="form-control" name="" id="inpComment" aria-describedby="helpId" placeholder="">
                 </div>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" id="btnSubmit" >Submit</button>
                 <button type="button" class="btn btn-primary" onclick="history.back()">Back</button>
+                @if(@Model.user.role == AcientBulletinBoard.Services.enumRole.admin)
+                {
+                    <button type="button" class="btn btn-primary" id="btnClearBoard">Clear the Board</button>
+                }
             </p>
         </div>
     </div>
 </center>
 
 @section Scripts{
-    @*<script src="~/js/PublicBulletinBoardIndex.js"></script>*@
-<script>
-        $(document).ready(function () {
-
-            $("#btnSubmit").click(function () {
-            @Model.comment = $("#inpComment").val();
-            @{
-                Model.submit();
-            }
-        })
-    })
-</script>
-
+    <script src="~/js/PublicBulletinBoardIndex.js"></script>
 }

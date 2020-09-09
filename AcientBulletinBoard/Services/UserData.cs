@@ -18,12 +18,13 @@ namespace AcientBulletinBoard.Services
         public enumCamp camp { get; set; }
         private User linqUser;
         private SQLiteConnection connection;
-        public void logIn(string account, string password)
+        public bool logIn(string account, string password)
         {
             if (!accountCheck(account, password))
-                return;
+                return false;
             if(linqUser!=null)
                 setValueLinq();
+            return true;
         }
         private bool accountCheck(string account, string password)
         {

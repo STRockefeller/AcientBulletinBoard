@@ -10,18 +10,17 @@ namespace AcientBulletinBoard.Models
     {
         public UserData user;
         public string comment { get; set; }
+        public List<Comment> comments = new List<Comment>();
         public PublicBulletinBoardModel()
         {
             user = Helper._userData;
+            updateComment();
         }
-        public void submitWithOtherIdentity()
+        public void updateComment()
         {
-
-        }
-        public void submit()
-        {
-            BulletinBoardData bulletinBoardData = new BulletinBoardData();
-            bulletinBoardData.submitComment("PublicBulletinBoard",user,comment);
+            comments.Clear();
+            BulletinBoardData data = new BulletinBoardData();
+            comments.AddRange(data.getCommentList("PublicBulletinBoard"));
         }
     }
 }

@@ -1,11 +1,23 @@
 ﻿$(document).ready(function () {
     $("#btnSubmit").click(function () {
         let data: object = new Object();
-        data["name"] = $("#InpName").val();
-        data["comment"] = $("#InpComment").val();
-        $.post("/login", data)
+        data["target"] = "PublicBulletinBoard";
+        data["name"] = $("#inpName").val();
+        data["comment"] = $("#inpComment").val();
+        $.post("/CommentSubmit", data)
             .done(() => {
-                location.href = "/PublicBulletinBoard";
+                location.reload();
+            })
+            .fail((err) => {
+            })
+            ;
+    })
+    $("#btnClearBoard").click(function () {
+        let data: object = new Object();
+        data["target"] = "PublicBulletinBoard";
+        $.post("/ClearBoard", data)
+            .done(() => {
+                location.reload();
             })
             .fail((err) => {
             })

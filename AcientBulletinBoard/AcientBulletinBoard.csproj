@@ -7,12 +7,18 @@
   <ItemGroup>
     <Content Remove="wwwroot\js\HomeIndex.ts" />
     <Content Remove="wwwroot\js\PublicBulletinBoardIndex.ts" />
+    <Content Remove="wwwroot\js\signalr.js" />
+    <Content Remove="wwwroot\js\signalr.min.js" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="DataBases\" />
-    <Folder Include="Hubs\" />
     <Folder Include="Views\System\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\signalr\dist\browser\signalr.js" />
+    <None Include="wwwroot\js\signalr\dist\browser\signalr.min.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,5 +57,21 @@
       <DependentUpon>LinqUser.tt</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 
 </Project>

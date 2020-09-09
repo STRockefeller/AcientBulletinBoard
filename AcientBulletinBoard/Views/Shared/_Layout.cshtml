@@ -9,23 +9,38 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AcientBulletinBoard</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AcientBulletinBoard</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    @if (AcientBulletinBoard.Services.Helper._userData.name != null)
+                    {
+                        <li class="nav-item active">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ChatRoom" asp-action="Index">Chat Room</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bulletin Boards</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" asp-controller="PublicBulletinBoard" asp-action="Index">Public Bulletin Board</a>
+                                @if (AcientBulletinBoard.Services.Helper._userData.camp != AcientBulletinBoard.Services.enumCamp.Neutral)
+                                {
+                                    <a class="dropdown-item" href="#">Camp Bulletin Board</a>
+                                }
+                            </div>
                         </li>
-                    </ul>
-                </div>
+                    }
+                </ul>
+                @if (AcientBulletinBoard.Services.Helper._userData.name != null && AcientBulletinBoard.Services.Helper._userData.role != AcientBulletinBoard.Services.enumRole.guest)
+                {
+                    <button type="button" class="btn btn-primary" id="btnLogOut">Log Out</button>
+                }
             </div>
         </nav>
     </header>
@@ -43,6 +58,16 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $("#btnLogOut").click(function () {
+            $.post("/logOut")
+                .done(function () {
+                    location.href = "/";
+                })
+                .fail(function (err) {
+                });
+        })
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

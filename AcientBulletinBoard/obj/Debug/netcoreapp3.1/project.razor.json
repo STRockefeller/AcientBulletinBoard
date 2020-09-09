@@ -14407,6 +14407,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\ChatRoom\\Index.cshtml",
+      "TargetPath": "Views\\ChatRoom\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"

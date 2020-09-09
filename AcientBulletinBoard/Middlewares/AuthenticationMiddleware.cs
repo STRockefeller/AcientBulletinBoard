@@ -23,8 +23,7 @@ namespace AcientBulletinBoard.Middlewares
                 string account = form["account"];
                 string password = form["password"];
                 Services.UserData user = new Services.UserData();
-                user.logIn(account, password);
-                if (user != null && user.name!=null)
+                if (user.logIn(account, password))
                 {
                     context.Response.Cookies.Delete("User");
                     context.Response.Cookies.Append("User", user.name);
@@ -41,14 +40,7 @@ namespace AcientBulletinBoard.Middlewares
             else if (path.EndsWith("/Logout".ToLower()))
             {
                 context.Response.Cookies.Delete("User");
-                context.Response.Redirect("/");
-            }
-            else if (path.IndexOf("/pages/".ToLower()) == 0 && context.User.Identity.IsAuthenticated == false)
-            {
-                context.Response.Redirect("/");
-            }
-            else if (path.IndexOf("/backup/".ToLower()) == 0 && context.User.IsInRole("Administrators") == false)
-            {
+                Helper.resetUser();
                 context.Response.Redirect("/");
             }
             else
