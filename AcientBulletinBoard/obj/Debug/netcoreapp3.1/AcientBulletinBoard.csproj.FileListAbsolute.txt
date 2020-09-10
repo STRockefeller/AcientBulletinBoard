@@ -66,4 +66,6 @@ C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\ne
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\AcientBulletinBoard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\Razor\Views\ChatRoom\Index.cshtml.g.cs
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\bin\Debug\netcoreapp3.1\tsconfig.json
+C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\bin\Debug\netcoreapp3.1\package-lock.json
+C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\bin\Debug\netcoreapp3.1\package.json
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\AcientBulletinBoard.csprojAssemblyReference.cache

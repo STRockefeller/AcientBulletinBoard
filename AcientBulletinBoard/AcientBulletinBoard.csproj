@@ -12,6 +12,42 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Views\ChatRoom\ChatRoomIndex.js" />
+    <None Remove="Views\ChatRoom\ChatRoomIndex.js.map" />
+    <None Remove="Views\Home\HomeIndex.js" />
+    <None Remove="Views\Home\HomeIndex.js.map" />
+    <None Remove="Views\PublicBulletinBoard\PublicBulletinBoardIndex.js" />
+    <None Remove="Views\PublicBulletinBoard\PublicBulletinBoardIndex.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="src\ChatRoomIndex.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="src\ChatRoomIndex.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="src\HomeIndex.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="src\HomeIndex.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="src\PublicBulletinBoardIndex.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="src\PublicBulletinBoardIndex.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DataBases\" />
     <Folder Include="Views\System\" />
   </ItemGroup>
@@ -56,6 +92,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>LinqUser.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="src\HomeIndex.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="src\PublicBulletinBoardIndex.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
