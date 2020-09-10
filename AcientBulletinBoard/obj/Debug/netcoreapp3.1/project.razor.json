@@ -14392,6 +14392,11 @@
   "RootNamespace": "AcientBulletinBoard",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\System\\Index.cshtml",
+      "TargetPath": "Views\\System\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -14414,6 +14419,11 @@
     {
       "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\System\\SignUp.cshtml",
+      "TargetPath": "Views\\System\\SignUp.cshtml",
       "FileKind": "mvc"
     },
     {

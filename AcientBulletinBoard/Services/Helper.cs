@@ -33,5 +33,9 @@ namespace AcientBulletinBoard.Services
         {
             _userData = new UserData();
         }
+        public static void createUser(UserData user)
+        {
+            //todo
+        }
     }
 }

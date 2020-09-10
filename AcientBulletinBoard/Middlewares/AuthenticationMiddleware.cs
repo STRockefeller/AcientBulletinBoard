@@ -43,6 +43,37 @@ namespace AcientBulletinBoard.Middlewares
                 Helper.resetUser();
                 context.Response.Redirect("/");
             }
+            if (context.Request.Method == "POST" && path.EndsWith("/SignUp".ToLower()))
+            {
+                IFormCollection form = await context.Request.ReadFormAsync();
+                UserData user = new UserData();
+                user.account = form["account"];
+                user.password = form["password"];
+                user.emailAddress = form["emailAddress"];
+                user.name = form["name"];
+                switch(form["camp"])
+                {
+                    case "Wei":
+                        user.camp = enumCamp.Wei;
+                        break;
+                    case "Shu":
+                        user.camp = enumCamp.Shu;
+                        break;
+                    case "Wu":
+                        user.camp = enumCamp.Wu;
+                        break;
+                    case "Neutral":
+                        user.camp = enumCamp.Neutral;
+                        break;
+                    case "God":
+                        user.camp = enumCamp.God;
+                        break;
+                    case "Foreign":
+                        user.camp = enumCamp.Foreign;
+                        break;
+                }
+
+            }
             else
             {
                 await next.Invoke(context);

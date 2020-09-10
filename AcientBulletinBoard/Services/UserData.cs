@@ -59,6 +59,9 @@ namespace AcientBulletinBoard.Services
                         case "Neutral":
                             camp = enumCamp.Neutral;
                             break;
+                        case "Foreign":
+                            camp = enumCamp.Foreign;
+                            break;
                     }
                     switch (dataReader["Role"].ToString())
                     {
@@ -97,5 +100,6 @@ namespace AcientBulletinBoard.Services
         Wu,
         God,
         Neutral,
+        Foreign,
     }
 }

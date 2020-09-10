@@ -41,6 +41,10 @@
                 {
                     <button type="button" class="btn btn-primary" id="btnLogOut">Log Out</button>
                 }
+                else
+                {
+                    <button type="button" class="btn btn-primary" id="btnSignUp">Sign up</button>
+                }
             </div>
         </nav>
     </header>
@@ -66,6 +70,9 @@
                 })
                 .fail(function (err) {
                 });
+        })
+        $("#btnSignUp").click(function () {
+            location.href = "/System/SignUp";
         })
     </script>
     @RenderSection("Scripts", required: false)

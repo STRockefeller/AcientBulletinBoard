@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<center>
+    <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Sign Up</h4>
+            <div class="form-group">
+                <label for="">Email Address</label>
+                <input type="text"
+                       class="form-control" name="" id="InpEmail" aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Account</label>
+                <input type="text"
+                       class="form-control" name="" id="InpAccount" aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="text"
+                       class="form-control" name="" id="InpPassword" aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Password Check</label>
+                <input type="text"
+                       class="form-control" name="" id="InpPasswordCheck" aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Display Name</label>
+                <input type="text"
+                       class="form-control" name="" id="InpDisplayName" aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="" id="lblCamp">Camp</label>
+                <button type="button" class="btn btn-primary" id="btnCampWei">魏</button>
+                <button type="button" class="btn btn-primary" id="btnCampShu">蜀</button>
+                <button type="button" class="btn btn-primary" id="btnCampWu">吳</button>
+                <button type="button" class="btn btn-primary" id="btnCampNeutral">中立</button>
+                <button type="button" class="btn btn-primary" id="btnCampForeign">海外</button>
+                <input type="text"
+                       class="form-control" name="" id="InpCamp" aria-describedby="helpId" placeholder="">
+            </div>
+            <button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+            <input type="text"
+                       style="color:red" name="" id="InpError" aria-describedby="helpId" placeholder="" readonly>
+        </div>
+    </div>
+</center>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#InpCamp").hide();
+        })
+        $("#btnCampWei").click(function () {
+            $("#InpCamp").val("魏");
+        })
+        $("#btnCampShu").click(function () {
+            $("#InpCamp").val("蜀");
+        })
+        $("#btnCampWu").click(function () {
+            $("#InpCamp").val("吳");
+        })
+        $("#btnCampNeutral").click(function () {
+            $("#InpCamp").val("中立");
+        })
+        $("#btnCampForeign").click(function () {
+            $("#InpCamp").val("海外");
+        })
+    </script>
+    <script src="~/js/SystemSignUp.js"></script>
+}
