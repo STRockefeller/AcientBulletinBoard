@@ -1,112 +1,26 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\HomeIndex.ts" />
-    <Content Remove="wwwroot\js\PublicBulletinBoardIndex.ts" />
-    <Content Remove="wwwroot\js\signalr.js" />
-    <Content Remove="wwwroot\js\signalr.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Views\ChatRoom\ChatRoomIndex.js" />
-    <None Remove="Views\ChatRoom\ChatRoomIndex.js.map" />
-    <None Remove="Views\Home\HomeIndex.js" />
-    <None Remove="Views\Home\HomeIndex.js.map" />
-    <None Remove="Views\PublicBulletinBoard\PublicBulletinBoardIndex.js" />
-    <None Remove="Views\PublicBulletinBoard\PublicBulletinBoardIndex.js.map" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="src\ChatRoomIndex.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="src\ChatRoomIndex.js.map">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="src\HomeIndex.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="src\HomeIndex.js.map">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="src\PublicBulletinBoardIndex.js">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="src\PublicBulletinBoardIndex.js.map">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataBases\" />
-    <Folder Include="Views\System\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\js\signalr\dist\browser\signalr.js" />
-    <None Include="wwwroot\js\signalr\dist\browser\signalr.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="linq2db.AspNet" Version="3.1.2" />
-    <PackageReference Include="linq2db.SQLite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.TypeScript.Compiler" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Node.js" Version="5.3.0" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.113.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="DataBases\UserData.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="DataModels\LinqUser.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LinqUser.generated.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\js\HomeIndex.ts" />
-    <TypeScriptCompile Include="wwwroot\js\PublicBulletinBoardIndex.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="DataModels\LinqUser.generated.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>LinqUser.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Update="src\HomeIndex.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Update="src\PublicBulletinBoardIndex.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
-
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
-    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptModuleKind />
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>

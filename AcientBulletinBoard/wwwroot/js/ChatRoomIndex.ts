@@ -1,4 +1,4 @@
-﻿//import * as signalR from "@microsoft/signalr"
+﻿import * as signalR from "@microsoft/signalr"
 
 $(document).ready(function () {
     var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();

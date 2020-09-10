@@ -9,9 +9,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using AcientBulletinBoard.Middlewares;
-using AcientBulletinBoard.DataModels;
-using LinqToDB.AspNet;
-using LinqToDB.AspNet.Logging;
 using AcientBulletinBoard.Hubs;
 
 namespace AcientBulletinBoard
@@ -33,12 +30,6 @@ namespace AcientBulletinBoard
             services.AddSignalR();
             services.AddSingleton<AuthenticationMiddleware>();
             services.AddSingleton<CommentSubmitMiddleware>();
-            services.AddLinqToDbContext<AppDataConnection>((provider, options) =>
-            {
-                options
-                .UseSQLite(Configuration.GetConnectionString("Default"))
-                .UseDefaultLogging(provider);
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

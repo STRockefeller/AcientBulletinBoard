@@ -1,4 +1,3 @@
-"use strict";
 $(document).ready(function () {
     $("#btnLogin").click(function () {
         var _a;

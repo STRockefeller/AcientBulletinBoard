@@ -24,129 +24,6 @@
           "buildTransitive/EntityFramework.targets": {}
         }
       },
-      "linq2db/3.1.2": {
-        "type": "package",
-        "dependencies": {
-          "System.ComponentModel.Annotations": "4.7.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/linq2db.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/linq2db.dll": {}
-        }
-      },
-      "linq2db.AspNet/3.1.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection": "3.1.7",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.7",
-          "linq2db": "3.1.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/linq2db.AspNet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/linq2db.AspNet.dll": {}
-        }
-      },
-      "linq2db.SQLite/3.1.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.SQLite.Core": "1.0.113.1",
-          "linq2db": "3.1.2"
-        },
-        "contentFiles": {
-          "contentFiles/any/any/LinqToDB.Templates/CopyMe.SQLite.tt.txt": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/DataAnnotations.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/DataModel.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/EditableObject.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/Equatable.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/Humanizer.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/LinqToDB.SQLite.Tools.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/LinqToDB.SQLite.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/LinqToDB.Tools.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/LinqToDB.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/MultipleFiles.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/NotifyDataErrorInfo.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/NotifyPropertyChanged.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/ObsoleteAttributes.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/PluralizationService.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/T4Model.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          },
-          "contentFiles/any/any/LinqToDB.Templates/Validation.ttinclude": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        },
-        "build": {
-          "build/linq2db.SQLite.props": {}
-        }
-      },
       "Microsoft.CSharp/4.6.0": {
         "type": "package",
         "compile": {
@@ -154,36 +31,6 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection/3.1.7": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.7"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
-        }
-      },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.7": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/3.1.7": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/3.0.0": {
@@ -194,6 +41,9 @@
         "runtime": {
           "lib/netstandard1.0/_._": {}
         }
+      },
+      "Microsoft.TypeScript.Compiler/3.1.5": {
+        "type": "package"
       },
       "Microsoft.TypeScript.MSBuild/4.0.2": {
         "type": "package",
@@ -243,6 +93,9 @@
           }
         }
       },
+      "Node.js/5.3.0": {
+        "type": "package"
+      },
       "runtime.native.System.Data.SqlClient.sni/4.6.0": {
         "type": "package",
         "dependencies": {
@@ -287,7 +140,7 @@
           "lib/netstandard2.0/System.CodeDom.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.7.0": {
+      "System.ComponentModel.Annotations/4.6.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
@@ -556,108 +409,6 @@
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
       ]
     },
-    "linq2db/3.1.2": {
-      "sha512": "N7QizADKfKihCR+p7byWMp1/kkNVSUMD/4hubadQoWW48mhUwtlVLMm8QytzSvvFU28Y9uuOCTkMKAsbcdNN5w==",
-      "type": "package",
-      "path": "linq2db/3.1.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "MIT-LICENSE.txt",
-        "images/icon.png",
-        "lib/net45/linq2db.dll",
-        "lib/net45/linq2db.pdb",
-        "lib/net45/linq2db.xml",
-        "lib/net46/linq2db.dll",
-        "lib/net46/linq2db.pdb",
-        "lib/net46/linq2db.xml",
-        "lib/netcoreapp2.1/linq2db.dll",
-        "lib/netcoreapp2.1/linq2db.pdb",
-        "lib/netcoreapp2.1/linq2db.xml",
-        "lib/netcoreapp3.1/linq2db.dll",
-        "lib/netcoreapp3.1/linq2db.pdb",
-        "lib/netcoreapp3.1/linq2db.xml",
-        "lib/netstandard2.0/linq2db.dll",
-        "lib/netstandard2.0/linq2db.pdb",
-        "lib/netstandard2.0/linq2db.xml",
-        "lib/netstandard2.1/linq2db.dll",
-        "lib/netstandard2.1/linq2db.pdb",
-        "lib/netstandard2.1/linq2db.xml",
-        "linq2db.3.1.2.nupkg.sha512",
-        "linq2db.nuspec"
-      ]
-    },
-    "linq2db.AspNet/3.1.2": {
-      "sha512": "Xk5gonbt1WV5g23eh/Dv5dVfJAI/o16dloLhFU7JktqwuFs4kTKWWNPnOJMmiUW3wBdlxTdwVQusBQT/V3lZOA==",
-      "type": "package",
-      "path": "linq2db.aspnet/3.1.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "MIT-LICENSE.txt",
-        "images/icon.png",
-        "lib/net45/linq2db.AspNet.dll",
-        "lib/net45/linq2db.AspNet.pdb",
-        "lib/net45/linq2db.AspNet.xml",
-        "lib/netstandard2.0/linq2db.AspNet.dll",
-        "lib/netstandard2.0/linq2db.AspNet.pdb",
-        "lib/netstandard2.0/linq2db.AspNet.xml",
-        "linq2db.aspnet.3.1.2.nupkg.sha512",
-        "linq2db.aspnet.nuspec"
-      ]
-    },
-    "linq2db.SQLite/3.1.2": {
-      "sha512": "K8YkzykkHTngvUByVa0naEoe+fbY5HXtF7QDTQlXEA5lyjZ9R9hujNJohwcU6Gl//FXgfWPXdSBwSJSYMc12RQ==",
-      "type": "package",
-      "path": "linq2db.sqlite/3.1.2",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "MIT-LICENSE.txt",
-        "build/linq2db.SQLite.props",
-        "content/LinqToDB.Templates/CopyMe.SQLite.tt.txt",
-        "content/LinqToDB.Templates/DataAnnotations.ttinclude",
-        "content/LinqToDB.Templates/DataModel.ttinclude",
-        "content/LinqToDB.Templates/EditableObject.ttinclude",
-        "content/LinqToDB.Templates/Equatable.ttinclude",
-        "content/LinqToDB.Templates/Humanizer.ttinclude",
-        "content/LinqToDB.Templates/LinqToDB.SQLite.Tools.ttinclude",
-        "content/LinqToDB.Templates/LinqToDB.SQLite.ttinclude",
-        "content/LinqToDB.Templates/LinqToDB.Tools.ttinclude",
-        "content/LinqToDB.Templates/LinqToDB.ttinclude",
-        "content/LinqToDB.Templates/MultipleFiles.ttinclude",
-        "content/LinqToDB.Templates/NotifyDataErrorInfo.ttinclude",
-        "content/LinqToDB.Templates/NotifyPropertyChanged.ttinclude",
-        "content/LinqToDB.Templates/ObsoleteAttributes.ttinclude",
-        "content/LinqToDB.Templates/PluralizationService.ttinclude",
-        "content/LinqToDB.Templates/T4Model.ttinclude",
-        "content/LinqToDB.Templates/Validation.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/CopyMe.SQLite.tt.txt",
-        "contentFiles/any/any/LinqToDB.Templates/DataAnnotations.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/DataModel.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/EditableObject.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/Equatable.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/Humanizer.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/LinqToDB.SQLite.Tools.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/LinqToDB.SQLite.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/LinqToDB.Tools.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/LinqToDB.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/MultipleFiles.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/NotifyDataErrorInfo.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/NotifyPropertyChanged.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/ObsoleteAttributes.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/PluralizationService.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/T4Model.ttinclude",
-        "contentFiles/any/any/LinqToDB.Templates/Validation.ttinclude",
-        "images/icon.png",
-        "linq2db.sqlite.3.1.2.nupkg.sha512",
-        "linq2db.sqlite.nuspec",
-        "tools/SQLite.Interop.dll",
-        "tools/System.Data.SQLite.dll",
-        "tools/linq2db.dll"
-      ]
-    },
     "Microsoft.CSharp/4.6.0": {
       "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
       "type": "package",
@@ -727,54 +478,6 @@
         "version.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection/3.1.7": {
-      "sha512": "yp38AFc5tJQZkjINjXBcxq+dANU06lo27D84duitZthtRPsgKJL87uf9RWRsDdRsWd+kXflmdMWFLKFjyKx6Pw==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection/3.1.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/net461/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
-        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
-        "microsoft.extensions.dependencyinjection.3.1.7.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.nuspec"
-      ]
-    },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.7": {
-      "sha512": "oKL2yNtTN1/cOp+cbdyv5TeLzO+GkO9B3fvbcPzKWTNCkDoH3ccYS3FWC1p4KSYe9frW4WsyfSTeM8X+xftOig==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
-        "microsoft.extensions.dependencyinjection.abstractions.nuspec"
-      ]
-    },
-    "Microsoft.Extensions.Logging.Abstractions/3.1.7": {
-      "sha512": "oD7LQbMuaqq/yAz8PKX0hl4+H/vDFTQHo8rxbKB36P1/bG8FG7JUVKBoHkSt1MaJUtgyiHrH1AlAhaucKUKyEg==",
-      "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/3.1.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.3.1.7.nupkg.sha512",
-        "microsoft.extensions.logging.abstractions.nuspec"
-      ]
-    },
     "Microsoft.NETCore.Platforms/3.0.0": {
       "sha512": "TsETIgVJb/AKoYfSP+iCxkuly5d3inZjTdx/ItZLk2CxY85v8083OBS3uai84kK3/baLnS5/b5XGs6zR7SuuHQ==",
       "type": "package",
@@ -790,6 +493,61 @@
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.TypeScript.Compiler/3.1.5": {
+      "sha512": "p5gMsE2gkShi+HDzgQ07pghDBNHfO8Bpyohm1eXTOWFw9+rvyWm0GLhKU0IR5pAbzL7r14tlujNfW00qanNIxg==",
+      "type": "package",
+      "path": "microsoft.typescript.compiler/3.1.5",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.htm",
+        "microsoft.typescript.compiler.3.1.5.nupkg.sha512",
+        "microsoft.typescript.compiler.nuspec",
+        "tools/chakracore.dll",
+        "tools/lib.d.ts",
+        "tools/lib.dom.d.ts",
+        "tools/lib.dom.iterable.d.ts",
+        "tools/lib.es2015.collection.d.ts",
+        "tools/lib.es2015.core.d.ts",
+        "tools/lib.es2015.d.ts",
+        "tools/lib.es2015.generator.d.ts",
+        "tools/lib.es2015.iterable.d.ts",
+        "tools/lib.es2015.promise.d.ts",
+        "tools/lib.es2015.proxy.d.ts",
+        "tools/lib.es2015.reflect.d.ts",
+        "tools/lib.es2015.symbol.d.ts",
+        "tools/lib.es2015.symbol.wellknown.d.ts",
+        "tools/lib.es2016.array.include.d.ts",
+        "tools/lib.es2016.d.ts",
+        "tools/lib.es2016.full.d.ts",
+        "tools/lib.es2017.d.ts",
+        "tools/lib.es2017.full.d.ts",
+        "tools/lib.es2017.intl.d.ts",
+        "tools/lib.es2017.object.d.ts",
+        "tools/lib.es2017.sharedmemory.d.ts",
+        "tools/lib.es2017.string.d.ts",
+        "tools/lib.es2017.typedarrays.d.ts",
+        "tools/lib.es2018.d.ts",
+        "tools/lib.es2018.full.d.ts",
+        "tools/lib.es2018.intl.d.ts",
+        "tools/lib.es2018.promise.d.ts",
+        "tools/lib.es2018.regexp.d.ts",
+        "tools/lib.es5.d.ts",
+        "tools/lib.es6.d.ts",
+        "tools/lib.esnext.array.d.ts",
+        "tools/lib.esnext.asynciterable.d.ts",
+        "tools/lib.esnext.d.ts",
+        "tools/lib.esnext.full.d.ts",
+        "tools/lib.esnext.intl.d.ts",
+        "tools/lib.esnext.symbol.d.ts",
+        "tools/lib.scripthost.d.ts",
+        "tools/lib.webworker.d.ts",
+        "tools/lib.webworker.importscripts.d.ts",
+        "tools/tsc.exe",
+        "tools/tsc.js"
       ]
     },
     "Microsoft.TypeScript.MSBuild/4.0.2": {
@@ -970,6 +728,24 @@
         "version.txt"
       ]
     },
+    "Node.js/5.3.0": {
+      "sha512": "WebrKeV0cXE4TaYriZQfDRNO/UMYnlQgR/CrHEx4kLgiRsY6F0Ve2UVS7qDHQHAjj/KXo3ygJY6HDhf91hwJDw==",
+      "type": "package",
+      "path": "node.js/5.3.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/.bin/node.cmd",
+        "node.exe",
+        "node.js.5.3.0.nupkg.sha512",
+        "node.js.nuspec",
+        "readme.txt",
+        "tools/bin_tools.ps1",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "runtime.native.System.Data.SqlClient.sni/4.6.0": {
       "sha512": "WRq11dBcJYyAbrUVguvv3BqNGl5ub60mZxUd+xaxNsSOb7tMLQxjbiyD/hF6FSl1akiom7GMttPDa3TW+UmnAQ==",
       "type": "package",
@@ -1056,10 +832,10 @@
         "version.txt"
       ]
     },
-    "System.ComponentModel.Annotations/4.7.0": {
-      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+    "System.ComponentModel.Annotations/4.6.0": {
+      "sha512": "pOd+UhZ3X8xfwKDlgAzowUJNjp8VYVmOHZm++vCd0kq1HZ0zK3mNo2yRXjYgv7Ik/Xi43fmJfND2PLEsQSALCg==",
       "type": "package",
-      "path": "system.componentmodel.annotations/4.7.0",
+      "path": "system.componentmodel.annotations/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1139,7 +915,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
+        "system.componentmodel.annotations.4.6.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -1591,10 +1367,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.TypeScript.Compiler >= 3.1.5",
       "Microsoft.TypeScript.MSBuild >= 4.0.2",
-      "System.Data.SQLite >= 1.0.113.1",
-      "linq2db.AspNet >= 3.1.2",
-      "linq2db.SQLite >= 3.1.2"
+      "Node.js >= 5.3.0",
+      "System.Data.SQLite >= 1.0.113.1"
     ]
   },
   "packageFolders": {
@@ -1634,23 +1410,25 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.TypeScript.Compiler": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.1.5, )"
+          },
           "Microsoft.TypeScript.MSBuild": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[4.0.2, )"
           },
+          "Node.js": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          },
           "System.Data.SQLite": {
             "target": "Package",
             "version": "[1.0.113.1, )"
-          },
-          "linq2db.AspNet": {
-            "target": "Package",
-            "version": "[3.1.2, )"
-          },
-          "linq2db.SQLite": {
-            "target": "Package",
-            "version": "[3.1.2, )"
           }
         },
         "imports": [

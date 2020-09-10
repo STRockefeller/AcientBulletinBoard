@@ -1,5 +1,6 @@
 "use strict";
-//import * as signalR from "@microsoft/signalr"
+Object.defineProperty(exports, "__esModule", { value: true });
+var signalR = require("@microsoft/signalr");
 $(document).ready(function () {
     var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
     document.getElementById("sendButton").disabled = true;

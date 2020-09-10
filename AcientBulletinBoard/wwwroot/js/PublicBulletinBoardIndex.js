@@ -1,4 +1,3 @@
-"use strict";
 $(document).ready(function () {
     $("#btnSubmit").click(function () {
         var data = new Object();
