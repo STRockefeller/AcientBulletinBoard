@@ -21,11 +21,13 @@ namespace AcientBulletinBoard.Controllers
             return View(model);
         }
 
-        public IActionResult SignUpInputCheck(Models.SystemSignUpModel signUpModel)
-        {
-            if (ModelState.IsValid)
-                return Ok(signUpModel);
-            return BadRequest(ModelState);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult SignUpInputCheck([FromForm]Models.SystemSignUpModel signUpModel)
+        //{
+        //    if (ModelState.IsValid)
+        //        return Ok(signUpModel);
+        //    return BadRequest(ModelState);
+        //}
     }
 }

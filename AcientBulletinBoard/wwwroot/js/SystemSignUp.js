@@ -1,4 +1,21 @@
 $(document).ready(function () {
+    //$("#btnMBSubmit").click(function () {
+    //    let data = new Object();
+    //    data["inputAccount"] = $("#inputAccount").val().toString();
+    //    data["inputPassword"] = $("#inputPassword").val().toString();
+    //    data["inputConfirmPassword"] = $("#inputConfirmPassword").val().toString();
+    //    data["inputEmailAddress"] = $("#inputEmailAddress").val().toString();
+    //    data["inputName"] = $("#inputName").val().toString();
+    //    data["inputCamp"] = $("#inputCamp").val().toString();
+    //    data["inputCamp"] = "Normal";
+    //    $.post("/ModelBindingSignUp", data)
+    //        .done(() => {
+    //            location.href = "/";
+    //        })
+    //        .fail((err) => {
+    //        })
+    //        ;
+    //})
     $("#InpError").hide();
     $("#btnSubmit").click(function () {
         if (inputCheck()) {

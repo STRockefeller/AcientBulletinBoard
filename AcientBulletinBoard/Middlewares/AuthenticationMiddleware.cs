@@ -27,7 +27,7 @@ namespace AcientBulletinBoard.Middlewares
                 {
                     context.Response.Cookies.Delete("User");
                     context.Response.Cookies.Append("User", user.name);
-                    Helper.setUser(user);
+                    Helper.SetUser(user);
                     context.Response.StatusCode = 200;
                     await context.Response.WriteAsync("Authorized");
                 }
@@ -40,7 +40,7 @@ namespace AcientBulletinBoard.Middlewares
             else if (path.EndsWith("/Logout".ToLower()))
             {
                 context.Response.Cookies.Delete("User");
-                Helper.resetUser();
+                Helper.ResetUser();
                 context.Response.Redirect("/");
             }
             if (context.Request.Method == "POST" && path.EndsWith("/SignUp".ToLower()))
@@ -51,6 +51,7 @@ namespace AcientBulletinBoard.Middlewares
                 user.password = form["password"];
                 user.emailAddress = form["emailAddress"];
                 user.name = form["name"];
+                user.role = enumRole.normal;
                 switch(form["camp"])
                 {
                     case "Wei":
@@ -72,6 +73,8 @@ namespace AcientBulletinBoard.Middlewares
                         user.camp = enumCamp.Foreign;
                         break;
                 }
+                if (Helper.IsValidEmail(user.emailAddress))
+                    Helper.CreateUser(user);
             }
             else
             {

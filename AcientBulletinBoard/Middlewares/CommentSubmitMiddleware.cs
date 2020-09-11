@@ -21,7 +21,7 @@ namespace AcientBulletinBoard.Middlewares
                 string name = form["name"];
                 string comment = form["comment"];
                 BulletinBoardData bulletinBoardData = new BulletinBoardData();
-                var defaultUsers = Helper.getDefaultUsers();
+                var defaultUsers = Helper.GetDefaultUsers();
                 if (name == Helper._userData.name)
                     bulletinBoardData.submitComment(target, Helper._userData, comment);
                 else if(defaultUsers.Any(user=>user.name==name))
