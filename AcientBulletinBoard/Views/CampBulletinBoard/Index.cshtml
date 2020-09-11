@@ -3,11 +3,11 @@
 *@
 @{
 }
-@model PublicBulletinBoardModel
+@model CampBulletinBoardModel
 
 <hr size=1>
 <center>
-    <h3><b>Public Bulletin Board</b></h3>
+    <h3><b>Camp Bulletin Board</b></h3>
     <div class="Board">
         <ul class="list-group">
             @foreach (var comment in @Model.comments)
@@ -66,7 +66,13 @@
         </div>
     </div>
 </center>
+  <input type="text"
+    class="form-control" name="" id="InpCamp" aria-describedby="helpId" placeholder="">
 
 @section Scripts{
+    <script>
+        $("#InpCamp").val(@Model.user.camp.ToString());
+        $("#InpCamp").hide();
+    </script>
     <script src="~/js/PublicBulletinBoardIndex.js"></script>
 }

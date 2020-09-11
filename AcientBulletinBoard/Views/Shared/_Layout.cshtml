@@ -31,7 +31,7 @@
                                 <a class="dropdown-item" asp-controller="PublicBulletinBoard" asp-action="Index">Public Bulletin Board</a>
                                 @if (AcientBulletinBoard.Services.Helper._userData.camp != AcientBulletinBoard.Services.enumCamp.Neutral)
                                 {
-                                    <a class="dropdown-item" href="#">Camp Bulletin Board</a>
+                                    <a class="dropdown-item"  asp-controller="CampBulletinBoard" asp-action="Index">Camp Bulletin Board</a>
                                 }
                             </div>
                         </li>

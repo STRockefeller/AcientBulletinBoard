@@ -14392,6 +14392,11 @@
   "RootNamespace": "AcientBulletinBoard",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\CampBulletinBoard\\Index.cshtml",
+      "TargetPath": "Views\\CampBulletinBoard\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\System\\Index.cshtml",
       "TargetPath": "Views\\System\\Index.cshtml",
       "FileKind": "mvc"

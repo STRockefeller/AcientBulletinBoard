@@ -26,6 +26,12 @@ namespace AcientBulletinBoard.Services
 
             users.Add(new UserData() { name = "孫堅", camp = enumCamp.Wu });
 
+            users.Add(new UserData() { name = "卑弥呼", camp = enumCamp.Foreign });
+            users.Add(new UserData() { name = "Claudius", camp = enumCamp.Foreign });
+
+            users.Add(new UserData() { name = "如來佛祖", camp = enumCamp.God });
+            users.Add(new UserData() { name = "玉皇大帝", camp = enumCamp.God });
+
             return users;
         }
         public static void SetUser(UserData userData)
