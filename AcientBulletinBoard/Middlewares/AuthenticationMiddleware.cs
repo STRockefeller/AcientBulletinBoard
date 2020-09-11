@@ -72,7 +72,6 @@ namespace AcientBulletinBoard.Middlewares
                         user.camp = enumCamp.Foreign;
                         break;
                 }
-
             }
             else
             {

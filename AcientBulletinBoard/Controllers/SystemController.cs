@@ -17,8 +17,15 @@ namespace AcientBulletinBoard.Controllers
         [Route("SignUp")]
         public IActionResult SignUp()
         {
-            Models.SystemModel model = new Models.SystemModel();
+            Models.SystemSignUpModel model = new Models.SystemSignUpModel();
             return View(model);
+        }
+
+        public IActionResult SignUpInputCheck(Models.SystemSignUpModel signUpModel)
+        {
+            if (ModelState.IsValid)
+                return Ok(signUpModel);
+            return BadRequest(ModelState);
         }
     }
 }

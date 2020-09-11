@@ -5,9 +5,9 @@ $(document).ready(function () {
             var data = new Object();
             data["account"] = $("#InpAccount").val().toString();
             data["password"] = $("#InpPassword").val().toString();
-            data["emailAddress"] = $("#emailAddress").val().toString();
-            data["name"] = $("#name").val().toString();
-            data["camp"] = $("#camp").val().toString();
+            data["emailAddress"] = $("#InpEmail").val().toString();
+            data["name"] = $("#InpDisplayName").val().toString();
+            data["camp"] = $("#InpCamp").val().toString();
             $.post("/SignUp", data)
                 .done(function () {
                 location.href = "/";
