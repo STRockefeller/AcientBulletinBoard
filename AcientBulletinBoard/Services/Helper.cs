@@ -47,6 +47,78 @@ namespace AcientBulletinBoard.Services
             command.ExecuteNonQuery();
             connection.Close();
         }
+        public static List<UserData> SearchUser(string searchByAccount, string searchByEmail, string searchByCamp)
+        {
+            List<UserData> AllUserList = new List<UserData>();
+            SQLiteConnection connection = new SQLiteConnection();
+            connection = new SQLiteConnection("data source = C:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\DataBases\\UserData.db");
+            connection.Open();
+            string commandString = $"Select * From Users;";
+            SQLiteCommand command = new SQLiteCommand(commandString, connection);
+            SQLiteDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                if (!dataReader[0].Equals(DBNull.Value))
+                {
+                    Services.UserData user = new UserData();
+                    user.account = dataReader["Account"].ToString();
+                    user.password = dataReader["Password"].ToString();
+                    user.name = dataReader["Name"].ToString();
+                    user.emailAddress = dataReader["EmailAddress"].ToString();
+                    switch (dataReader["Camp"].ToString())
+                    {
+                        case "Wei":
+                            user.camp = enumCamp.Wei;
+                            break;
+
+                        case "Shu":
+                            user.camp = enumCamp.Shu;
+                            break;
+
+                        case "Wu":
+                            user.camp = enumCamp.Wu;
+                            break;
+
+                        case "God":
+                            user.camp = enumCamp.God;
+                            break;
+
+                        case "Neutral":
+                            user.camp = enumCamp.Neutral;
+                            break;
+                        case "Foreign":
+                            user.camp = enumCamp.Foreign;
+                            break;
+                    }
+                    switch (dataReader["Role"].ToString())
+                    {
+                        case "admin":
+                            user.role = enumRole.admin;
+                            break;
+
+                        case "normal":
+                            user.role = enumRole.normal;
+                            break;
+
+                        case "guest":
+                            user.role = enumRole.guest;
+                            break;
+                    }
+                    AllUserList.Add(user);
+                }
+            }
+
+            List<UserData> searchUserList = new List<UserData>();
+            searchUserList.AddRange(AllUserList);
+            if (searchByAccount != "")
+                searchUserList = searchUserList.Where(user => user.account == searchByAccount).ToList();
+            if (searchByEmail != "")
+                searchUserList = searchUserList.Where(user => user.emailAddress == searchByEmail).ToList();
+            if (searchByCamp != "")
+                searchUserList = searchUserList.Where(user => user.camp.ToString() == searchByCamp).ToList();
+            connection.Close();
+            return searchUserList;
+        }
         public static bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))

@@ -14445,6 +14445,11 @@
       "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\source\\repos\\AcientBulletinBoard\\AcientBulletinBoard\\Views\\System\\AccountsManagement.cshtml",
+      "TargetPath": "Views\\System\\AccountsManagement.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

@@ -56,7 +56,8 @@ namespace AcientBulletinBoard
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapHub < ChatRoomHub > ("/ChatRoomHub");
+                endpoints.MapHub<ChatRoomHub>("/ChatRoomHub");
+                endpoints.MapHub<SystemAccountsManagementHub>("/SystemAccountsManagementHub");
             });
         }
     }

@@ -12,12 +12,23 @@ namespace AcientBulletinBoard.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            return View();
+            Models.SystemModel model = new Models.SystemModel();
+            if (Services.Helper._userData.role != Services.enumRole.admin)
+                return Redirect("/");
+            return View(model);
         }
         [Route("SignUp")]
         public IActionResult SignUp()
         {
             Models.SystemSignUpModel model = new Models.SystemSignUpModel();
+            return View(model);
+        }
+        [Route("AccountsManagement")]
+        public IActionResult AccountsManagement()
+        {
+            Models.SystemAccountsManagementModel model = new Models.SystemAccountsManagementModel();
+            if (Services.Helper._userData.role != Services.enumRole.admin)
+                return Redirect("/");
             return View(model);
         }
 

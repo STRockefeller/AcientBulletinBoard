@@ -1,0 +1,103 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model SystemAccountsManagementModel
+<center>
+    <div class="userList">
+        <div class="card">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <h4 class="card-title">User List</h4>
+                <div class="container" id="divAccountList">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <b style="color:crimson">Account</b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b style="color:crimson">Email Address</b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b style="color:crimson">Name</b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b style="color:crimson">Camp</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="management">
+        <div class="card">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="">Search by account</label>
+                    <input type="text" class="form-control" name="" id="InpSearchByAccount" aria-describedby="helpId" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="">Search by email address</label>
+                    <input type="text" class="form-control" name="" id="InpSearchByEmail" aria-describedby="helpId" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="">Search by camp</label>
+                    <input type="text" class="form-control" name="" id="InpSearchByCamp" aria-describedby="helpId" placeholder="">
+                </div>
+                <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+            </div>
+        </div>
+    </div>
+</center>
+
+@section Scripts{
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/SystemAccountsManagementHub").build();
+        connection.on("GenerateAccountsList", function (listString) {
+            $(".rowGenerated").remove();
+            var row = document.createElement("div");
+            row.className = "row rowGenerated";
+            if (listString === null)
+                return;
+            for (i = 0; i < listString.length; i++) {
+                var Account = document.createTextNode(listString[i][0]);
+                var Email = document.createTextNode(listString[i][1]);
+                var Name = document.createTextNode(listString[i][2]);
+                var Camp = document.createTextNode(listString[i][3]);
+                var colAccount = document.createElement("div");
+                colAccount.className = "col-sm-3";
+                colAccount.appendChild(Account);
+                var colEmail = document.createElement("div");
+                colEmail.className = "col-sm-3";
+                colEmail.appendChild(Email);
+                var colName = document.createElement("div");
+                colName.className = "col-sm-3";
+                colName.appendChild(Name);
+                var colCamp = document.createElement("div");
+                colCamp.className = "col-sm-3";
+                colCamp.appendChild(Camp);
+                row.appendChild(colAccount);
+                row.appendChild(colEmail);
+                row.appendChild(colName);
+                row.appendChild(colCamp);
+            }
+            document.getElementById("divAccountList").appendChild(row);
+        });
+
+        connection.start().catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        document.getElementById("btnSearch").addEventListener("click", function (event) {
+            var searchByAccount = document.getElementById("InpSearchByAccount").value;
+            var searchByEmail = document.getElementById("InpSearchByEmail").value;
+            var searchByCamp = document.getElementById("InpSearchByCamp").value;
+            connection.invoke("UpdateAccountsList", searchByAccount, searchByEmail, searchByCamp).catch(function (err) {
+                return console.error(err.toString());
+            });
+            event.preventDefault();
+        });
+    </script>
+}

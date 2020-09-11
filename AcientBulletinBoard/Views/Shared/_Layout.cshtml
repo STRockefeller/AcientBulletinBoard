@@ -36,6 +36,12 @@
                             </div>
                         </li>
                     }
+                    @if (AcientBulletinBoard.Services.Helper._userData.name != null && AcientBulletinBoard.Services.Helper._userData.role == AcientBulletinBoard.Services.enumRole.admin)
+                    {
+                        <li class="nav-item active">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="System" asp-action="Index">System</a>
+                        </li>
+                    }
                 </ul>
                 @if (AcientBulletinBoard.Services.Helper._userData.name != null && AcientBulletinBoard.Services.Helper._userData.role != AcientBulletinBoard.Services.enumRole.guest)
                 {

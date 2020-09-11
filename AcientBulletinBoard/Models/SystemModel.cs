@@ -30,4 +30,19 @@ namespace AcientBulletinBoard.Models
         public string inputCamp { get; set; }
         public enumRole inputRole { get; set; }
     }
+    public class SystemAccountsManagementModel
+    {
+        public List<UserData> userList = new List<UserData>();
+        /// <summary>
+        /// constructer / get user list from database
+        /// </summary>
+        public SystemAccountsManagementModel()
+        {
+            getUserList();
+        }
+        private void getUserList()
+        {
+
+        }
+    }
 }
