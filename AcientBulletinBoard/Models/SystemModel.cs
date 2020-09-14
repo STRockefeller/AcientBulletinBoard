@@ -45,4 +45,8 @@ namespace AcientBulletinBoard.Models
 
         }
     }
+    public class SystemBoardManagementModel
+    {
+
+    }
 }

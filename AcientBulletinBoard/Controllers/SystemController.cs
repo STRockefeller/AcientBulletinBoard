@@ -32,6 +32,14 @@ namespace AcientBulletinBoard.Controllers
             return View(model);
         }
 
+        [Route("BoardManagement")]
+        public IActionResult BoardManagement()
+        {
+            Models.SystemBoardManagementModel model = new Models.SystemBoardManagementModel();
+            if (Services.Helper._userData.role != Services.enumRole.admin)
+                return Redirect("/");
+            return View(model);
+        }
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public IActionResult SignUpInputCheck([FromForm]Models.SystemSignUpModel signUpModel)
