@@ -63,3 +63,4 @@ C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\ne
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\Razor\Views\System\AccountsManagement.cshtml.g.cs
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\Razor\Views\CampBulletinBoard\Index.cshtml.g.cs
 C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\Razor\Views\System\BoardManagement.cshtml.g.cs
+C:\Users\admin\source\repos\AcientBulletinBoard\AcientBulletinBoard\obj\Debug\netcoreapp3.1\AcientBulletinBoard.csprojAssemblyReference.cache
